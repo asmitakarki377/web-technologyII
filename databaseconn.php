@@ -5,8 +5,13 @@ $db_password="";
 $db_name="phpclasswork";
 $conn="";
 
-$conn=mysqli_connect($db_server, $db_user, $db_password, $db_name);
+try{
+    $conn=mysqli_connect($db_server, $db_user, $db_password, $db_name);
+}
 
+catch(mysql_sql_exception){
+    echo"Could not connect";
+}
 if($conn){
     echo "You are connected.";
 }
